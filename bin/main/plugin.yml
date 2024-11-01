@@ -1,0 +1,15 @@
+name: ApeNet
+version: 1.0
+main: net.ssquadteam.apenet.ApeNet
+api-version: 1.20
+commands:
+  apenet:
+    description: ApeNet commands
+    usage: /<command> <reload|send|servername>
+permissions:
+  apenet.reload:
+    description: Allows reloading the ApeNet configuration
+    default: op
+  apenet.send:
+    description: Allows sending other players to different servers
+    default: op
