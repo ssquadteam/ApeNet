@@ -70,6 +70,13 @@ public class TransferCommand implements CommandExecutor {
         }
 
         try {
+            if (plugin.isSecureTransferEnabled() && plugin.isFrontendServer()) {
+                String token = plugin.getTokenManager().getToken();
+                player.setScoreboard(Bukkit.getScoreboardManager().getNewScoreboard());
+                player.getScoreboard().registerNewObjective("apenetToken", "dummy", "ApeNet Token");
+                player.getScoreboard().getObjective("apenetToken").getScore(token).setScore(1);
+            }
+
             player.transfer(host, port);
             sender.sendMessage("Transferring " + player.getName() + " to " + serverName + "...");
             if (sender != player) {

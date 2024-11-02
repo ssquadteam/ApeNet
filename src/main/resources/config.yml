@@ -1,6 +1,15 @@
 # Command to use for server transfer (default: apenet)
 command: apenet
 
+# Enable secure transfer system (default: false)
+# VERY EXPERIMENTAL. USE AT YOUR OWN RISK.
+# Generates a token.yml. Use the same generated token for every servers to enable a Secure Transfer in-between them.
+# It's not full-proof and PROBABLY can be BYPASSED.
+secure_transfer: false
+
+# Is this a frontend server? (Only applicable if secure_transfer is true)
+frontend_server: false
+
 # Server configurations
 servers:
   lobby:
